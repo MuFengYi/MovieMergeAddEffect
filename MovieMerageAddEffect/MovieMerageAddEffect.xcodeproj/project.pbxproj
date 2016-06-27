@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B47DE17B1D212A4400B0D431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE17A1D212A4400B0D431 /* main.m */; };
+		B47DE17E1D212A4400B0D431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE17D1D212A4400B0D431 /* AppDelegate.m */; };
+		B47DE1841D212A4400B0D431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1821D212A4400B0D431 /* Main.storyboard */; };
+		B47DE1861D212A4400B0D431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1851D212A4400B0D431 /* Assets.xcassets */; };
+		B47DE1891D212A4400B0D431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1871D212A4400B0D431 /* LaunchScreen.storyboard */; };
+		B47DE1941D212A4400B0D431 /* MovieMerageAddEffectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE1931D212A4400B0D431 /* MovieMerageAddEffectTests.m */; };
+		B47DE19F1D212A4400B0D431 /* MovieMerageAddEffectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE19E1D212A4400B0D431 /* MovieMerageAddEffectUITests.m */; };
+		B47DE1AE1D212ABA00B0D431 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE1AD1D212ABA00B0D431 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B47DE1901D212A4400B0D431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B47DE16E1D212A4300B0D431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B47DE1751D212A4400B0D431;
+			remoteInfo = MovieMerageAddEffect;
+		};
+		B47DE19B1D212A4400B0D431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B47DE16E1D212A4300B0D431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B47DE1751D212A4400B0D431;
+			remoteInfo = MovieMerageAddEffect;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B47DE1761D212A4400B0D431 /* MovieMerageAddEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMerageAddEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47DE17A1D212A4400B0D431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B47DE17C1D212A4400B0D431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B47DE17D1D212A4400B0D431 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B47DE1831D212A4400B0D431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B47DE1851D212A4400B0D431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B47DE1881D212A4400B0D431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B47DE18A1D212A4400B0D431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47DE18F1D212A4400B0D431 /* MovieMerageAddEffectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieMerageAddEffectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47DE1931D212A4400B0D431 /* MovieMerageAddEffectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMerageAddEffectTests.m; sourceTree = "<group>"; };
+		B47DE1951D212A4400B0D431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47DE19A1D212A4400B0D431 /* MovieMerageAddEffectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieMerageAddEffectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47DE19E1D212A4400B0D431 /* MovieMerageAddEffectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieMerageAddEffectUITests.m; sourceTree = "<group>"; };
+		B47DE1A01D212A4400B0D431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B47DE1AC1D212ABA00B0D431 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B47DE1AD1D212ABA00B0D431 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B47DE1AF1D212ACC00B0D431 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		B47DE1B01D212ACC00B0D431 /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
+		B47DE1B11D212ACC00B0D431 /* cc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cc.mp4; sourceTree = "<group>"; };
+		B47DE1B21D212ACC00B0D431 /* xx.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = xx.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B47DE1731D212A4400B0D431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE18C1D212A4400B0D431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE1971D212A4400B0D431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B47DE16D1D212A4300B0D431 = {
+			isa = PBXGroup;
+			children = (
+				B47DE1781D212A4400B0D431 /* MovieMerageAddEffect */,
+				B47DE1921D212A4400B0D431 /* MovieMerageAddEffectTests */,
+				B47DE19D1D212A4400B0D431 /* MovieMerageAddEffectUITests */,
+				B47DE1771D212A4400B0D431 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B47DE1771D212A4400B0D431 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE1761D212A4400B0D431 /* MovieMerageAddEffect.app */,
+				B47DE18F1D212A4400B0D431 /* MovieMerageAddEffectTests.xctest */,
+				B47DE19A1D212A4400B0D431 /* MovieMerageAddEffectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B47DE1781D212A4400B0D431 /* MovieMerageAddEffect */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE17C1D212A4400B0D431 /* AppDelegate.h */,
+				B47DE17D1D212A4400B0D431 /* AppDelegate.m */,
+				B47DE1AC1D212ABA00B0D431 /* ViewController.h */,
+				B47DE1AD1D212ABA00B0D431 /* ViewController.m */,
+				B47DE1821D212A4400B0D431 /* Main.storyboard */,
+				B47DE1851D212A4400B0D431 /* Assets.xcassets */,
+				B47DE1B31D212ADC00B0D431 /* resource */,
+				B47DE1871D212A4400B0D431 /* LaunchScreen.storyboard */,
+				B47DE18A1D212A4400B0D431 /* Info.plist */,
+				B47DE1791D212A4400B0D431 /* Supporting Files */,
+			);
+			path = MovieMerageAddEffect;
+			sourceTree = "<group>";
+		};
+		B47DE1791D212A4400B0D431 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE17A1D212A4400B0D431 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B47DE1921D212A4400B0D431 /* MovieMerageAddEffectTests */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE1931D212A4400B0D431 /* MovieMerageAddEffectTests.m */,
+				B47DE1951D212A4400B0D431 /* Info.plist */,
+			);
+			path = MovieMerageAddEffectTests;
+			sourceTree = "<group>";
+		};
+		B47DE19D1D212A4400B0D431 /* MovieMerageAddEffectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE19E1D212A4400B0D431 /* MovieMerageAddEffectUITests.m */,
+				B47DE1A01D212A4400B0D431 /* Info.plist */,
+			);
+			path = MovieMerageAddEffectUITests;
+			sourceTree = "<group>";
+		};
+		B47DE1B31D212ADC00B0D431 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				B47DE1AF1D212ACC00B0D431 /* 1.mp4 */,
+				B47DE1B01D212ACC00B0D431 /* 2.mp4 */,
+				B47DE1B11D212ACC00B0D431 /* cc.mp4 */,
+				B47DE1B21D212ACC00B0D431 /* xx.mp4 */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B47DE1751D212A4400B0D431 /* MovieMerageAddEffect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47DE1A31D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffect" */;
+			buildPhases = (
+				B47DE1721D212A4400B0D431 /* Sources */,
+				B47DE1731D212A4400B0D431 /* Frameworks */,
+				B47DE1741D212A4400B0D431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieMerageAddEffect;
+			productName = MovieMerageAddEffect;
+			productReference = B47DE1761D212A4400B0D431 /* MovieMerageAddEffect.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B47DE18E1D212A4400B0D431 /* MovieMerageAddEffectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47DE1A61D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectTests" */;
+			buildPhases = (
+				B47DE18B1D212A4400B0D431 /* Sources */,
+				B47DE18C1D212A4400B0D431 /* Frameworks */,
+				B47DE18D1D212A4400B0D431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B47DE1911D212A4400B0D431 /* PBXTargetDependency */,
+			);
+			name = MovieMerageAddEffectTests;
+			productName = MovieMerageAddEffectTests;
+			productReference = B47DE18F1D212A4400B0D431 /* MovieMerageAddEffectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B47DE1991D212A4400B0D431 /* MovieMerageAddEffectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B47DE1A91D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectUITests" */;
+			buildPhases = (
+				B47DE1961D212A4400B0D431 /* Sources */,
+				B47DE1971D212A4400B0D431 /* Frameworks */,
+				B47DE1981D212A4400B0D431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B47DE19C1D212A4400B0D431 /* PBXTargetDependency */,
+			);
+			name = MovieMerageAddEffectUITests;
+			productName = MovieMerageAddEffectUITests;
+			productReference = B47DE19A1D212A4400B0D431 /* MovieMerageAddEffectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B47DE16E1D212A4300B0D431 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "macro macro";
+				TargetAttributes = {
+					B47DE1751D212A4400B0D431 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					B47DE18E1D212A4400B0D431 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B47DE1751D212A4400B0D431;
+					};
+					B47DE1991D212A4400B0D431 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = B47DE1751D212A4400B0D431;
+					};
+				};
+			};
+			buildConfigurationList = B47DE1711D212A4300B0D431 /* Build configuration list for PBXProject "MovieMerageAddEffect" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B47DE16D1D212A4300B0D431;
+			productRefGroup = B47DE1771D212A4400B0D431 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B47DE1751D212A4400B0D431 /* MovieMerageAddEffect */,
+				B47DE18E1D212A4400B0D431 /* MovieMerageAddEffectTests */,
+				B47DE1991D212A4400B0D431 /* MovieMerageAddEffectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B47DE1741D212A4400B0D431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47DE1891D212A4400B0D431 /* LaunchScreen.storyboard in Resources */,
+				B47DE1861D212A4400B0D431 /* Assets.xcassets in Resources */,
+				B47DE1841D212A4400B0D431 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE18D1D212A4400B0D431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE1981D212A4400B0D431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B47DE1721D212A4400B0D431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47DE1AE1D212ABA00B0D431 /* ViewController.m in Sources */,
+				B47DE17E1D212A4400B0D431 /* AppDelegate.m in Sources */,
+				B47DE17B1D212A4400B0D431 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE18B1D212A4400B0D431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47DE1941D212A4400B0D431 /* MovieMerageAddEffectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B47DE1961D212A4400B0D431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B47DE19F1D212A4400B0D431 /* MovieMerageAddEffectUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B47DE1911D212A4400B0D431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B47DE1751D212A4400B0D431 /* MovieMerageAddEffect */;
+			targetProxy = B47DE1901D212A4400B0D431 /* PBXContainerItemProxy */;
+		};
+		B47DE19C1D212A4400B0D431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B47DE1751D212A4400B0D431 /* MovieMerageAddEffect */;
+			targetProxy = B47DE19B1D212A4400B0D431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B47DE1821D212A4400B0D431 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B47DE1831D212A4400B0D431 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B47DE1871D212A4400B0D431 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B47DE1881D212A4400B0D431 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B47DE1A11D212A4400B0D431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B47DE1A21D212A4400B0D431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B47DE1A41D212A4400B0D431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MovieMerageAddEffect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B47DE1A51D212A4400B0D431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MovieMerageAddEffect/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffect;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B47DE1A71D212A4400B0D431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MovieMerageAddEffectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieMerageAddEffect.app/MovieMerageAddEffect";
+			};
+			name = Debug;
+		};
+		B47DE1A81D212A4400B0D431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MovieMerageAddEffectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MovieMerageAddEffect.app/MovieMerageAddEffect";
+			};
+			name = Release;
+		};
+		B47DE1AA1D212A4400B0D431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MovieMerageAddEffectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MovieMerageAddEffect;
+			};
+			name = Debug;
+		};
+		B47DE1AB1D212A4400B0D431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MovieMerageAddEffectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffectUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MovieMerageAddEffect;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B47DE1711D212A4300B0D431 /* Build configuration list for PBXProject "MovieMerageAddEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47DE1A11D212A4400B0D431 /* Debug */,
+				B47DE1A21D212A4400B0D431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B47DE1A31D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47DE1A41D212A4400B0D431 /* Debug */,
+				B47DE1A51D212A4400B0D431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B47DE1A61D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47DE1A71D212A4400B0D431 /* Debug */,
+				B47DE1A81D212A4400B0D431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B47DE1A91D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B47DE1AA1D212A4400B0D431 /* Debug */,
+				B47DE1AB1D212A4400B0D431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B47DE16E1D212A4300B0D431 /* Project object */;
+}
