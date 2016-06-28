@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B472B29C1D22100200A8A16C /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1AF1D212ACC00B0D431 /* 1.mp4 */; };
+		B472B29D1D22100200A8A16C /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1B01D212ACC00B0D431 /* 2.mp4 */; };
+		B472B29E1D22100200A8A16C /* cc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1B11D212ACC00B0D431 /* cc.mp4 */; };
+		B472B29F1D22100200A8A16C /* xx.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1B21D212ACC00B0D431 /* xx.mp4 */; };
+		B472B2AE1D2214E500A8A16C /* Charlie's Whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A11D2214E500A8A16C /* Charlie's Whistle.mp3 */; };
+		B472B2AF1D2214E500A8A16C /* music.plist in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A21D2214E500A8A16C /* music.plist */; };
+		B472B2B01D2214E500A8A16C /* mvlist in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A31D2214E500A8A16C /* mvlist */; };
+		B472B2B11D2214E500A8A16C /* qiege_back.png in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A41D2214E500A8A16C /* qiege_back.png */; };
+		B472B2B21D2214E500A8A16C /* qiege_huicen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A51D2214E500A8A16C /* qiege_huicen.mp4 */; };
+		B472B2B31D2214E500A8A16C /* qiege_pianwei.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A61D2214E500A8A16C /* qiege_pianwei.mp4 */; };
+		B472B2B41D2214E500A8A16C /* qiege_pianweien.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A71D2214E500A8A16C /* qiege_pianweien.mp4 */; };
+		B472B2B51D2214E500A8A16C /* qiege_yinying.png in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A81D2214E500A8A16C /* qiege_yinying.png */; };
+		B472B2B61D2214E500A8A16C /* qiegeLut.png in Resources */ = {isa = PBXBuildFile; fileRef = B472B2A91D2214E500A8A16C /* qiegeLut.png */; };
+		B472B2B71D2214E500A8A16C /* ShaLaLa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2AA1D2214E500A8A16C /* ShaLaLa.mp3 */; };
+		B472B2B81D2214E500A8A16C /* Twenty Three.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2AB1D2214E500A8A16C /* Twenty Three.mp3 */; };
+		B472B2B91D2214E500A8A16C /* xiaochenai.png in Resources */ = {isa = PBXBuildFile; fileRef = B472B2AC1D2214E500A8A16C /* xiaochenai.png */; };
+		B472B2BA1D2214E500A8A16C /* 童玩.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B472B2AD1D2214E500A8A16C /* 童玩.mp3 */; };
+		B472B2BD1D227E1900A8A16C /* YiPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2BC1D227E1900A8A16C /* YiPlayer.m */; };
+		B472B2C21D2283AA00A8A16C /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B472B2BF1D2283AA00A8A16C /* WMPlayer.bundle */; };
+		B472B2C31D2283AA00A8A16C /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2C11D2283AA00A8A16C /* WMPlayer.m */; };
+		B472B2E11D2284B000A8A16C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B472B2C51D2284B000A8A16C /* LICENSE */; };
+		B472B2E21D2284B000A8A16C /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2C81D2284B000A8A16C /* MASCompositeConstraint.m */; };
+		B472B2E31D2284B000A8A16C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2CB1D2284B000A8A16C /* MASConstraint.m */; };
+		B472B2E41D2284B000A8A16C /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2CD1D2284B000A8A16C /* MASConstraintMaker.m */; };
+		B472B2E51D2284B000A8A16C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2CF1D2284B000A8A16C /* MASLayoutConstraint.m */; };
+		B472B2E61D2284B000A8A16C /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2D31D2284B000A8A16C /* MASViewAttribute.m */; };
+		B472B2E71D2284B000A8A16C /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2D51D2284B000A8A16C /* MASViewConstraint.m */; };
+		B472B2E81D2284B000A8A16C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2D71D2284B000A8A16C /* NSArray+MASAdditions.m */; };
+		B472B2E91D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2DA1D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		B472B2EA1D2284B000A8A16C /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2DC1D2284B000A8A16C /* View+MASAdditions.m */; };
+		B472B2EB1D2284B000A8A16C /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B472B2DF1D2284B000A8A16C /* ViewController+MASAdditions.m */; };
+		B472B2EC1D2284B000A8A16C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B472B2E01D2284B000A8A16C /* README.md */; };
 		B47DE17B1D212A4400B0D431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE17A1D212A4400B0D431 /* main.m */; };
 		B47DE17E1D212A4400B0D431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47DE17D1D212A4400B0D431 /* AppDelegate.m */; };
 		B47DE1841D212A4400B0D431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1821D212A4400B0D431 /* Main.storyboard */; };
@@ -35,6 +67,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B472B2A11D2214E500A8A16C /* Charlie's Whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Charlie's Whistle.mp3"; sourceTree = "<group>"; };
+		B472B2A21D2214E500A8A16C /* music.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = music.plist; sourceTree = "<group>"; };
+		B472B2A31D2214E500A8A16C /* mvlist */ = {isa = PBXFileReference; lastKnownFileType = file; path = mvlist; sourceTree = "<group>"; };
+		B472B2A41D2214E500A8A16C /* qiege_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qiege_back.png; sourceTree = "<group>"; };
+		B472B2A51D2214E500A8A16C /* qiege_huicen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = qiege_huicen.mp4; sourceTree = "<group>"; };
+		B472B2A61D2214E500A8A16C /* qiege_pianwei.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = qiege_pianwei.mp4; sourceTree = "<group>"; };
+		B472B2A71D2214E500A8A16C /* qiege_pianweien.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = qiege_pianweien.mp4; sourceTree = "<group>"; };
+		B472B2A81D2214E500A8A16C /* qiege_yinying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qiege_yinying.png; sourceTree = "<group>"; };
+		B472B2A91D2214E500A8A16C /* qiegeLut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qiegeLut.png; sourceTree = "<group>"; };
+		B472B2AA1D2214E500A8A16C /* ShaLaLa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ShaLaLa.mp3; sourceTree = "<group>"; };
+		B472B2AB1D2214E500A8A16C /* Twenty Three.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Twenty Three.mp3"; sourceTree = "<group>"; };
+		B472B2AC1D2214E500A8A16C /* xiaochenai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaochenai.png; sourceTree = "<group>"; };
+		B472B2AD1D2214E500A8A16C /* 童玩.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "童玩.mp3"; sourceTree = "<group>"; };
+		B472B2BB1D227E1900A8A16C /* YiPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiPlayer.h; sourceTree = "<group>"; };
+		B472B2BC1D227E1900A8A16C /* YiPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiPlayer.m; sourceTree = "<group>"; };
+		B472B2BF1D2283AA00A8A16C /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
+		B472B2C01D2283AA00A8A16C /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
+		B472B2C11D2283AA00A8A16C /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
+		B472B2C51D2284B000A8A16C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B472B2C71D2284B000A8A16C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		B472B2C81D2284B000A8A16C /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		B472B2C91D2284B000A8A16C /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		B472B2CA1D2284B000A8A16C /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		B472B2CB1D2284B000A8A16C /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		B472B2CC1D2284B000A8A16C /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		B472B2CD1D2284B000A8A16C /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		B472B2CE1D2284B000A8A16C /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		B472B2CF1D2284B000A8A16C /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		B472B2D01D2284B000A8A16C /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		B472B2D11D2284B000A8A16C /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		B472B2D21D2284B000A8A16C /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		B472B2D31D2284B000A8A16C /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		B472B2D41D2284B000A8A16C /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		B472B2D51D2284B000A8A16C /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		B472B2D61D2284B000A8A16C /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		B472B2D71D2284B000A8A16C /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		B472B2D81D2284B000A8A16C /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		B472B2D91D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		B472B2DA1D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		B472B2DB1D2284B000A8A16C /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		B472B2DC1D2284B000A8A16C /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		B472B2DD1D2284B000A8A16C /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		B472B2DE1D2284B000A8A16C /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		B472B2DF1D2284B000A8A16C /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		B472B2E01D2284B000A8A16C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B47DE1761D212A4400B0D431 /* MovieMerageAddEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMerageAddEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47DE17A1D212A4400B0D431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B47DE17C1D212A4400B0D431 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,6 +159,78 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B472B2A01D2214E500A8A16C /* 美拍MV包 */ = {
+			isa = PBXGroup;
+			children = (
+				B472B2A11D2214E500A8A16C /* Charlie's Whistle.mp3 */,
+				B472B2A21D2214E500A8A16C /* music.plist */,
+				B472B2A31D2214E500A8A16C /* mvlist */,
+				B472B2A41D2214E500A8A16C /* qiege_back.png */,
+				B472B2A51D2214E500A8A16C /* qiege_huicen.mp4 */,
+				B472B2A61D2214E500A8A16C /* qiege_pianwei.mp4 */,
+				B472B2A71D2214E500A8A16C /* qiege_pianweien.mp4 */,
+				B472B2A81D2214E500A8A16C /* qiege_yinying.png */,
+				B472B2A91D2214E500A8A16C /* qiegeLut.png */,
+				B472B2AA1D2214E500A8A16C /* ShaLaLa.mp3 */,
+				B472B2AB1D2214E500A8A16C /* Twenty Three.mp3 */,
+				B472B2AC1D2214E500A8A16C /* xiaochenai.png */,
+				B472B2AD1D2214E500A8A16C /* 童玩.mp3 */,
+			);
+			path = "美拍MV包";
+			sourceTree = "<group>";
+		};
+		B472B2BE1D2283AA00A8A16C /* WMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B472B2BF1D2283AA00A8A16C /* WMPlayer.bundle */,
+				B472B2C01D2283AA00A8A16C /* WMPlayer.h */,
+				B472B2C11D2283AA00A8A16C /* WMPlayer.m */,
+			);
+			path = WMPlayer;
+			sourceTree = "<group>";
+		};
+		B472B2C41D2284B000A8A16C /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				B472B2C51D2284B000A8A16C /* LICENSE */,
+				B472B2C61D2284B000A8A16C /* Masonry */,
+				B472B2E01D2284B000A8A16C /* README.md */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		B472B2C61D2284B000A8A16C /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				B472B2C71D2284B000A8A16C /* MASCompositeConstraint.h */,
+				B472B2C81D2284B000A8A16C /* MASCompositeConstraint.m */,
+				B472B2C91D2284B000A8A16C /* MASConstraint+Private.h */,
+				B472B2CA1D2284B000A8A16C /* MASConstraint.h */,
+				B472B2CB1D2284B000A8A16C /* MASConstraint.m */,
+				B472B2CC1D2284B000A8A16C /* MASConstraintMaker.h */,
+				B472B2CD1D2284B000A8A16C /* MASConstraintMaker.m */,
+				B472B2CE1D2284B000A8A16C /* MASLayoutConstraint.h */,
+				B472B2CF1D2284B000A8A16C /* MASLayoutConstraint.m */,
+				B472B2D01D2284B000A8A16C /* Masonry.h */,
+				B472B2D11D2284B000A8A16C /* MASUtilities.h */,
+				B472B2D21D2284B000A8A16C /* MASViewAttribute.h */,
+				B472B2D31D2284B000A8A16C /* MASViewAttribute.m */,
+				B472B2D41D2284B000A8A16C /* MASViewConstraint.h */,
+				B472B2D51D2284B000A8A16C /* MASViewConstraint.m */,
+				B472B2D61D2284B000A8A16C /* NSArray+MASAdditions.h */,
+				B472B2D71D2284B000A8A16C /* NSArray+MASAdditions.m */,
+				B472B2D81D2284B000A8A16C /* NSArray+MASShorthandAdditions.h */,
+				B472B2D91D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.h */,
+				B472B2DA1D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.m */,
+				B472B2DB1D2284B000A8A16C /* View+MASAdditions.h */,
+				B472B2DC1D2284B000A8A16C /* View+MASAdditions.m */,
+				B472B2DD1D2284B000A8A16C /* View+MASShorthandAdditions.h */,
+				B472B2DE1D2284B000A8A16C /* ViewController+MASAdditions.h */,
+				B472B2DF1D2284B000A8A16C /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
 		B47DE16D1D212A4300B0D431 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +254,17 @@
 		B47DE1781D212A4400B0D431 /* MovieMerageAddEffect */ = {
 			isa = PBXGroup;
 			children = (
+				B472B2C41D2284B000A8A16C /* Masonry */,
+				B472B2BE1D2283AA00A8A16C /* WMPlayer */,
 				B47DE17C1D212A4400B0D431 /* AppDelegate.h */,
 				B47DE17D1D212A4400B0D431 /* AppDelegate.m */,
 				B47DE1AC1D212ABA00B0D431 /* ViewController.h */,
 				B47DE1AD1D212ABA00B0D431 /* ViewController.m */,
+				B472B2BB1D227E1900A8A16C /* YiPlayer.h */,
+				B472B2BC1D227E1900A8A16C /* YiPlayer.m */,
 				B47DE1821D212A4400B0D431 /* Main.storyboard */,
 				B47DE1851D212A4400B0D431 /* Assets.xcassets */,
+				B472B2A01D2214E500A8A16C /* 美拍MV包 */,
 				B47DE1B31D212ADC00B0D431 /* resource */,
 				B47DE1871D212A4400B0D431 /* LaunchScreen.storyboard */,
 				B47DE18A1D212A4400B0D431 /* Info.plist */,
@@ -223,6 +377,7 @@
 				TargetAttributes = {
 					B47DE1751D212A4400B0D431 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9XW236Z8LL;
 					};
 					B47DE18E1D212A4400B0D431 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -259,9 +414,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B472B29C1D22100200A8A16C /* 1.mp4 in Resources */,
+				B472B29D1D22100200A8A16C /* 2.mp4 in Resources */,
+				B472B2AF1D2214E500A8A16C /* music.plist in Resources */,
+				B472B2B91D2214E500A8A16C /* xiaochenai.png in Resources */,
+				B472B29E1D22100200A8A16C /* cc.mp4 in Resources */,
+				B472B2B11D2214E500A8A16C /* qiege_back.png in Resources */,
+				B472B29F1D22100200A8A16C /* xx.mp4 in Resources */,
+				B472B2B41D2214E500A8A16C /* qiege_pianweien.mp4 in Resources */,
+				B472B2B81D2214E500A8A16C /* Twenty Three.mp3 in Resources */,
+				B472B2B01D2214E500A8A16C /* mvlist in Resources */,
+				B472B2BA1D2214E500A8A16C /* 童玩.mp3 in Resources */,
+				B472B2B31D2214E500A8A16C /* qiege_pianwei.mp4 in Resources */,
 				B47DE1891D212A4400B0D431 /* LaunchScreen.storyboard in Resources */,
+				B472B2C21D2283AA00A8A16C /* WMPlayer.bundle in Resources */,
+				B472B2B51D2214E500A8A16C /* qiege_yinying.png in Resources */,
+				B472B2AE1D2214E500A8A16C /* Charlie's Whistle.mp3 in Resources */,
+				B472B2E11D2284B000A8A16C /* LICENSE in Resources */,
+				B472B2B21D2214E500A8A16C /* qiege_huicen.mp4 in Resources */,
 				B47DE1861D212A4400B0D431 /* Assets.xcassets in Resources */,
 				B47DE1841D212A4400B0D431 /* Main.storyboard in Resources */,
+				B472B2B61D2214E500A8A16C /* qiegeLut.png in Resources */,
+				B472B2B71D2214E500A8A16C /* ShaLaLa.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +460,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B472B2E91D2284B000A8A16C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				B472B2BD1D227E1900A8A16C /* YiPlayer.m in Sources */,
+				B472B2E71D2284B000A8A16C /* MASViewConstraint.m in Sources */,
+				B472B2C31D2283AA00A8A16C /* WMPlayer.m in Sources */,
 				B47DE1AE1D212ABA00B0D431 /* ViewController.m in Sources */,
 				B47DE17E1D212A4400B0D431 /* AppDelegate.m in Sources */,
+				B472B2EC1D2284B000A8A16C /* README.md in Sources */,
+				B472B2EA1D2284B000A8A16C /* View+MASAdditions.m in Sources */,
+				B472B2E21D2284B000A8A16C /* MASCompositeConstraint.m in Sources */,
+				B472B2E61D2284B000A8A16C /* MASViewAttribute.m in Sources */,
+				B472B2E41D2284B000A8A16C /* MASConstraintMaker.m in Sources */,
+				B472B2E81D2284B000A8A16C /* NSArray+MASAdditions.m in Sources */,
+				B472B2EB1D2284B000A8A16C /* ViewController+MASAdditions.m in Sources */,
+				B472B2E31D2284B000A8A16C /* MASConstraint.m in Sources */,
+				B472B2E51D2284B000A8A16C /* MASLayoutConstraint.m in Sources */,
 				B47DE17B1D212A4400B0D431 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,10 +618,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MovieMerageAddEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -442,10 +633,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MovieMerageAddEffect/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = macro.MovieMerageAddEffect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -514,6 +709,7 @@
 				B47DE1A51D212A4400B0D431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B47DE1A61D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +718,7 @@
 				B47DE1A81D212A4400B0D431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B47DE1A91D212A4400B0D431 /* Build configuration list for PBXNativeTarget "MovieMerageAddEffectUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +727,7 @@
 				B47DE1AB1D212A4400B0D431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
