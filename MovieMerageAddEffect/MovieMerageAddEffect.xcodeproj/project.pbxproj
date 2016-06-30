@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44AD80E1D251EFA00FE0CDA /* 6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B44AD80B1D251EFA00FE0CDA /* 6.mp4 */; };
+		B44AD80F1D251EFA00FE0CDA /* 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B44AD80C1D251EFA00FE0CDA /* 8.mp4 */; };
+		B44AD8101D251EFA00FE0CDA /* 9.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B44AD80D1D251EFA00FE0CDA /* 9.mp4 */; };
+		B44AD8121D25219300FE0CDA /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B44AD8111D25219300FE0CDA /* music.mp3 */; };
 		B472B29C1D22100200A8A16C /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1AF1D212ACC00B0D431 /* 1.mp4 */; };
 		B472B29D1D22100200A8A16C /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1B01D212ACC00B0D431 /* 2.mp4 */; };
 		B472B29E1D22100200A8A16C /* cc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B47DE1B11D212ACC00B0D431 /* cc.mp4 */; };
@@ -67,6 +71,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44AD80B1D251EFA00FE0CDA /* 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.mp4; sourceTree = "<group>"; };
+		B44AD80C1D251EFA00FE0CDA /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
+		B44AD80D1D251EFA00FE0CDA /* 9.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 9.mp4; sourceTree = "<group>"; };
+		B44AD8111D25219300FE0CDA /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		B472B2A11D2214E500A8A16C /* Charlie's Whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Charlie's Whistle.mp3"; sourceTree = "<group>"; };
 		B472B2A21D2214E500A8A16C /* music.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = music.plist; sourceTree = "<group>"; };
 		B472B2A31D2214E500A8A16C /* mvlist */ = {isa = PBXFileReference; lastKnownFileType = file; path = mvlist; sourceTree = "<group>"; };
@@ -175,6 +183,7 @@
 				B472B2AB1D2214E500A8A16C /* Twenty Three.mp3 */,
 				B472B2AC1D2214E500A8A16C /* xiaochenai.png */,
 				B472B2AD1D2214E500A8A16C /* 童玩.mp3 */,
+				B44AD8111D25219300FE0CDA /* music.mp3 */,
 			);
 			path = "美拍MV包";
 			sourceTree = "<group>";
@@ -306,6 +315,9 @@
 				B47DE1B01D212ACC00B0D431 /* 2.mp4 */,
 				B47DE1B11D212ACC00B0D431 /* cc.mp4 */,
 				B47DE1B21D212ACC00B0D431 /* xx.mp4 */,
+				B44AD80B1D251EFA00FE0CDA /* 6.mp4 */,
+				B44AD80C1D251EFA00FE0CDA /* 8.mp4 */,
+				B44AD80D1D251EFA00FE0CDA /* 9.mp4 */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -422,10 +434,12 @@
 				B472B2B11D2214E500A8A16C /* qiege_back.png in Resources */,
 				B472B29F1D22100200A8A16C /* xx.mp4 in Resources */,
 				B472B2B41D2214E500A8A16C /* qiege_pianweien.mp4 in Resources */,
+				B44AD8121D25219300FE0CDA /* music.mp3 in Resources */,
 				B472B2B81D2214E500A8A16C /* Twenty Three.mp3 in Resources */,
 				B472B2B01D2214E500A8A16C /* mvlist in Resources */,
 				B472B2BA1D2214E500A8A16C /* 童玩.mp3 in Resources */,
 				B472B2B31D2214E500A8A16C /* qiege_pianwei.mp4 in Resources */,
+				B44AD80F1D251EFA00FE0CDA /* 8.mp4 in Resources */,
 				B47DE1891D212A4400B0D431 /* LaunchScreen.storyboard in Resources */,
 				B472B2C21D2283AA00A8A16C /* WMPlayer.bundle in Resources */,
 				B472B2B51D2214E500A8A16C /* qiege_yinying.png in Resources */,
@@ -433,6 +447,8 @@
 				B472B2E11D2284B000A8A16C /* LICENSE in Resources */,
 				B472B2B21D2214E500A8A16C /* qiege_huicen.mp4 in Resources */,
 				B47DE1861D212A4400B0D431 /* Assets.xcassets in Resources */,
+				B44AD80E1D251EFA00FE0CDA /* 6.mp4 in Resources */,
+				B44AD8101D251EFA00FE0CDA /* 9.mp4 in Resources */,
 				B47DE1841D212A4400B0D431 /* Main.storyboard in Resources */,
 				B472B2B61D2214E500A8A16C /* qiegeLut.png in Resources */,
 				B472B2B71D2214E500A8A16C /* ShaLaLa.mp3 in Resources */,
