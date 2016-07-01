@@ -314,122 +314,6 @@
 }
 
 
-- (IBAction)testOnlyOneVideo{
-    
-    NSBundle    *bundle =   [NSBundle mainBundle];
-    NSString    *videoPath  =   [bundle pathForResource:@"1" ofType:@"mp4"];
-    NSString    *videoPathsecond    =   [bundle pathForResource:@"2" ofType:@"mp4"];
-    NSString    *musicPath  =   [bundle pathForResource:@"ShaLaLa" ofType:@"mp3"];
-    AVAsset     *videoAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPath]];
-    AVAsset     *secondvideoAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPathsecond]];
-    AVAsset     *musicAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:musicPath]];
-    
-    AVMutableComposition    *composition    =   [AVMutableComposition composition];
-
-    AVMutableCompositionTrack   *videoTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-    AVMutableCompositionTrack   *audioTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    
-    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:kCMTimeZero error:nil];
-    [videoTrack insertTimeRange:CMTimeRangeMake(videoAsset.duration, secondvideoAsset.duration) ofTrack:[secondvideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:videoAsset.duration error:nil];
-    [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, CMTimeAdd(videoAsset.duration, secondvideoAsset.duration)) ofTrack:[musicAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
-
-    AVMutableVideoCompositionInstruction    *videoInstruction   =   [AVMutableVideoCompositionInstruction videoCompositionInstruction];
-    videoInstruction.timeRange  =   CMTimeRangeMake(kCMTimeZero,CMTimeAdd(videoAsset.duration, secondvideoAsset.duration));
-
-    AVMutableVideoCompositionLayerInstruction   *fromLayerInstruction  =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
-    
-    AVMutableVideoCompositionLayerInstruction   *backLayerInstruction  =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
-    
-    AVMutableVideoComposition *    mainCompositionInst  =   [AVMutableVideoComposition videoCompositionWithPropertiesOfAsset:composition];
-    //溶解过渡效果
-//    [fromLayerInstruction setOpacityRampFromStartOpacity:1.0 toEndOpacity:0.0 timeRange:CMTimeRangeMake(CMTimeMake(2, 1), CMTimeMake(2, 1))];
-    //应用擦除过渡效果
-//    CGFloat videoWidth  =   mainCompositionInst.renderSize.width;
-//    CGFloat videoHeight =   mainCompositionInst.renderSize.height;
-//    CGRect  starRect    =   CGRectMake(0.0f, 0.0f, videoWidth, videoHeight);
-//    CGRect  endRect     =   CGRectMake(0.0f, videoHeight, videoWidth, 0.0f);
-//    [fromLayerInstruction setCropRectangleRampFromStartCropRectangle:starRect toEndCropRectangle:endRect timeRange:CMTimeRangeMake(CMTimeMake(5, 5), CMTimeMake(5, 5))];
-//    //应用推入过渡效果
-    CGAffineTransform   identityTransform   =   CGAffineTransformIdentity;
-    CGFloat videowidth  =   mainCompositionInst.renderSize.width;
-    CGAffineTransform   fromDestTransform   =   CGAffineTransformMakeTranslation(-videowidth, 0.0);
-    CGAffineTransform   toStartTransform    =   CGAffineTransformMakeTranslation(videowidth, 0.0);
-    [fromLayerInstruction setTransformRampFromStartTransform:identityTransform toEndTransform:fromDestTransform timeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration)];
-    [backLayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:identityTransform timeRange:CMTimeRangeMake(videoAsset.duration,secondvideoAsset.duration)];
-    videoInstruction.layerInstructions  =   [NSArray arrayWithObjects:fromLayerInstruction, nil];
-//
-//    
-//    
-//    UIImageOrientation videoAssetOrientation_  = UIImageOrientationUp;
-//    BOOL isVideoAssetPortrait_  = NO;
-//    CGAffineTransform videoTransform = videoTrack.preferredTransform;
-//    if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
-//        videoAssetOrientation_ = UIImageOrientationRight;
-//        isVideoAssetPortrait_ = YES;
-//    }
-//    if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
-//        videoAssetOrientation_ =  UIImageOrientationLeft;
-//        isVideoAssetPortrait_ = YES;
-//    }
-//    if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
-//        videoAssetOrientation_ =  UIImageOrientationUp;
-//    }
-//    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
-//        videoAssetOrientation_ = UIImageOrientationDown;
-//    }
-//    
-//    [fromLayerInstruction setTransform:videoTrack.preferredTransform atTime:kCMTimeZero];
-//    [fromLayerInstruction setOpacity:0.0 atTime:videoAsset.duration];
-//    
-//    CGSize naturalSize;
-//    if(isVideoAssetPortrait_){
-//        naturalSize = CGSizeMake(videoTrack.naturalSize.height, videoTrack.naturalSize.width);
-//    } else {
-//        naturalSize = videoTrack.naturalSize;
-//    }
-//
-//    
-//    float renderWidth, renderHeight;
-//    renderWidth = naturalSize.width;
-//    renderHeight = naturalSize.height;
-//    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
-//    mainCompositionInst.instructions = [NSArray arrayWithObject:videoInstruction];
-//    mainCompositionInst.frameDuration = CMTimeMake(1, 30);
-    
-
-//        // 1 - Set up the text layer
-//        CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
-//        [subtitle1Text setFont:@"Helvetica-Bold"];
-//        [subtitle1Text setFontSize:36];
-//        [subtitle1Text setFrame:CGRectMake(100, 100, naturalSize.width, 100)];
-//        [subtitle1Text setString:@"MuFeng..........."];
-//        [subtitle1Text setAlignmentMode:kCAAlignmentCenter];
-//        [subtitle1Text setForegroundColor:[[UIColor whiteColor] CGColor]];
-//        
-//        // 2 - The usual overlay
-//        CALayer *overlayLayer = [CALayer layer];
-//        [overlayLayer addSublayer:subtitle1Text];
-//        overlayLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
-//        [overlayLayer setMasksToBounds:YES];
-//        
-//        
-//        CALayer *parentLayer = [CALayer layer];
-//        CALayer *videoLayer = [CALayer layer];
-//        parentLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
-//        videoLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
-//        [parentLayer addSublayer:videoLayer];
-//        [parentLayer addSublayer:overlayLayer];
-//        
-//        mainCompositionInst.animationTool = [AVVideoCompositionCoreAnimationTool
-//                                             videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
-
-    [self exportVideo:composition withVideoComPosition:mainCompositionInst];
-}
-
-
-
-
-
 
 
 - (IBAction)InsertVideoToTransform{
@@ -453,12 +337,298 @@
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, secondVideoAsset.duration) ofTrack:[secondVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:CMTimeAdd(firstVideoAsset.duration, insertVideoAsset.duration) error:nil];
     
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,CMTimeAdd(firstVideoAsset.duration, CMTimeAdd(insertVideoAsset.duration, secondVideoAsset.duration))) ofTrack:[audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
+    
+//    AVVideoComposition  *videoComposition   =   [AVMutableVideoComposition videoCompositionWithPropertiesOfAsset:composition];
+//      NSArray *compositionInstructions = videoComposition.instructions;
+    // 3.1 - Create AVMutableVideoCompositionInstruction
+    
+    AVMutableVideoCompositionInstruction *mainInstruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    
+    mainInstruction.timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration, CMTimeAdd(insertVideoAsset.duration , secondVideoAsset.duration)));
+    
+    // 3.2 - Create an AVMutableVideoCompositionLayerInstruction for the video track and fix the orientation.
+    AVMutableVideoCompositionLayerInstruction *videolayerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    
+    AVAssetTrack *videoAssetTrack = [[firstVideoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    AVAssetTrack    *insertTrack    =   [insertVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject;
+    AVAssetTrack    *secondTrack    =   [secondVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject;
+    
+//    
+//    UIImageOrientation videoAssetOrientation_  = UIImageOrientationUp;
+//    BOOL isVideoAssetPortrait_  = NO;
+//    CGAffineTransform videoTransform = videoAssetTrack.preferredTransform;
+//    if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+//        videoAssetOrientation_ = UIImageOrientationRight;
+//        isVideoAssetPortrait_ = YES;
+//    }
+//    if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+//        videoAssetOrientation_ =  UIImageOrientationLeft;
+//        isVideoAssetPortrait_ = YES;
+//    }
+//    if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
+//        videoAssetOrientation_ =  UIImageOrientationUp;
+//    }
+//    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+//        videoAssetOrientation_ = UIImageOrientationDown;
+//    }
+    
+//    [videolayerInstruction setTransform:videoAssetTrack.preferredTransform atTime:kCMTimeZero];
+//    [videolayerInstruction setTransform:insertTrack.preferredTransform atTime:kCMTimeZero];
+//    [videolayerInstruction setTransform:secondTrack.preferredTransform atTime:kCMTimeZero];
+//    [videolayerInstruction setOpacity:0.8 atTime:firstVideoAsset.duration];
+//    [videolayerInstruction setCropRectangle:CGRectMake(100, 100, 100, 100) atTime:CMTimeMake(2, 1)];
+    
+//
+//    AVMutableVideoComposition *mainCompositionInst;
+//    mainCompositionInst = [AVMutableVideoComposition videoComposition];
+//    
+//    CGSize naturalSize;
+//    if(isVideoAssetPortrait_){
+//        naturalSize = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.width);
+//    } else {
+//        naturalSize = videoAssetTrack.naturalSize;
+//    }
+//
+////    naturalSize =   CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height/2);
+//    float renderWidth, renderHeight;
+//    renderWidth = naturalSize.width;
+//    renderHeight = naturalSize.height;
+//    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
+    
+    
+    // Define starting and ending transforms                        // 1
+//    CGAffineTransform identityTransform = CGAffineTransformIdentity;
+//    
+//    CGFloat videoWidth = mainCompositionInst.renderSize.width;
+//    
+//    CGAffineTransform fromDestTransform =                           // 2
+//    CGAffineTransformMakeTranslation(-videoWidth, 0.0);
+//    
+//    CGAffineTransform toStartTransform =
+//    CGAffineTransformMakeTranslation(videoWidth, 0.0);
+//    
+//    [videolayerInstruction setTransformRampFromStartTransform:identityTransform // 3
+//                                   toEndTransform:fromDestTransform
+//                                        timeRange:CMTimeRangeMake(firstVideoAsset.duration,CMTimeMake(1, 1))];
+//    
+//    [videolayerInstruction setTransformRampFromStartTransform:toStartTransform    // 4
+//                                 toEndTransform:identityTransform
+//                                      timeRange:CMTimeRangeMake(CMTimeAdd(firstVideoAsset.duration, insertVideoAsset.duration), CMTimeMake(1, 1))];
+
+    
+    
+    // 3.3 - Add instructions
+//    mainInstruction.layerInstructions = [NSArray arrayWithObjects:videolayerInstruction,nil];
+//    mainCompositionInst.instructions = [NSArray arrayWithObject:mainInstruction];
+//    mainCompositionInst.frameDuration = CMTimeMake(1, 30);
     [self exportVideo:composition withVideoComPosition:nil];
 }
 
 
 
 
+
+
+- (IBAction)twoVideoTransferEffect:(UIButton*)clickButton{
+    NSBundle    *bundle =   [NSBundle mainBundle];
+    NSString    *firstVideoPath =   [bundle pathForResource:@"6" ofType:@"mp4"];
+    NSString    *secondVideoPath    =   [bundle pathForResource:@"6" ofType:@"mp4"];
+    AVAsset *firstVideoAsset    =   [AVAsset assetWithURL:[NSURL fileURLWithPath:firstVideoPath]];
+    AVAsset *secondVideoAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:secondVideoPath]];
+    AVAsset *audioAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:[bundle pathForResource:@"music" ofType:@"mp3"]]];
+    
+    AVMutableComposition    *composition    =   [AVMutableComposition composition];
+    AVMutableCompositionTrack   *videoTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    AVMutableCompositionTrack   *audioTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAsset.duration) ofTrack:[firstVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:kCMTimeZero error:nil];
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,secondVideoAsset.duration) ofTrack:[secondVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:firstVideoAsset.duration error:nil];
+    [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration, secondVideoAsset.duration)) ofTrack:[audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
+    
+    //视频编辑指令
+    AVMutableVideoCompositionInstruction    *videoCompositionInstruction    =   [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    videoCompositionInstruction.timeRange   =   CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration, secondVideoAsset.duration));
+    AVMutableVideoCompositionLayerInstruction   *fromlayerInstruction   =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    
+    AVMutableVideoCompositionLayerInstruction   *tolayerInstruction   =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    
+    AVMutableVideoComposition   *mainVideoComposition   =   [AVMutableVideoComposition videoCompositionWithPropertiesOfAsset:composition];
+    
+    UIImageOrientation videoAssetOrientation_  = UIImageOrientationUp;
+    BOOL isVideoAssetPortrait_  = NO;
+    CGAffineTransform videoTransform = videoTrack.preferredTransform;
+    if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ = UIImageOrientationRight;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ =  UIImageOrientationLeft;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
+        videoAssetOrientation_ =  UIImageOrientationUp;
+    }
+    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+        videoAssetOrientation_ = UIImageOrientationDown;
+    }
+    
+    //    [fromLayerInstruction setTransform:videoTrack.preferredTransform atTime:kCMTimeZero];
+    //    [fromLayerInstruction setOpacity:0.0 atTime:videoAsset.duration];
+    
+    CGSize naturalSize;
+    if(isVideoAssetPortrait_){
+        naturalSize = CGSizeMake(videoTrack.naturalSize.height, videoTrack.naturalSize.width);
+    } else {
+        naturalSize = videoTrack.naturalSize;
+    }
+    
+    float renderWidth, renderHeight;
+    renderWidth = naturalSize.width;
+    renderHeight = naturalSize.height;
+    mainVideoComposition.renderSize = CGSizeMake(renderWidth, renderHeight);
+    
+    if (clickButton.tag==1) {
+            [fromlayerInstruction setOpacityRampFromStartOpacity:1.0 toEndOpacity:0.5 timeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAsset.duration)];
+           [tolayerInstruction setOpacityRampFromStartOpacity:0.5 toEndOpacity:1.0 timeRange:CMTimeRangeMake(firstVideoAsset.duration, secondVideoAsset.duration)];
+    }else if (clickButton.tag==2){
+        
+            CGFloat videoWidth  =   mainVideoComposition.renderSize.width;
+            CGFloat videoHeight =   mainVideoComposition.renderSize.height;
+            CGRect  starRect    =   CGRectMake(0.0f, 0.0f, videoWidth, videoHeight);
+            CGRect  endRect     =   CGRectMake(0.0f, videoHeight, videoWidth, 0.0f);
+            [fromlayerInstruction setCropRectangleRampFromStartCropRectangle:starRect toEndCropRectangle:endRect timeRange:CMTimeRangeMake(CMTimeMake(2, 2), CMTimeMake(5, 1))];
+            [tolayerInstruction setCropRectangleRampFromStartCropRectangle:endRect toEndCropRectangle:starRect timeRange:CMTimeRangeMake(CMTimeMake(7, 7), CMTimeMake(5, 1))];
+
+    }else{
+        CGAffineTransform   identityTransform   =   CGAffineTransformIdentity;
+        CGFloat videowidth  =   mainVideoComposition.renderSize.width;
+        CGAffineTransform   fromDestTransform   =   CGAffineTransformMakeTranslation(-videowidth, 0.0);
+        CGAffineTransform   toStartTransform    =   CGAffineTransformMakeTranslation(videowidth, 0.0);
+        [fromlayerInstruction setTransformRampFromStartTransform:identityTransform toEndTransform:fromDestTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+        [tolayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:identityTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+    }
+    videoCompositionInstruction.layerInstructions  =   [NSArray arrayWithObjects:fromlayerInstruction,tolayerInstruction,nil];
+    mainVideoComposition.instructions = [NSArray arrayWithObject:videoCompositionInstruction];
+    mainVideoComposition.frameDuration = CMTimeMake(1, 30);
+    [self exportVideo:composition withVideoComPosition:mainVideoComposition];
+}
+
+- (IBAction)testOnlyOneVideo{
+    
+    NSBundle    *bundle =   [NSBundle mainBundle];
+    NSString    *videoPath  =   [bundle pathForResource:@"6" ofType:@"mp4"];
+    NSString    *videoPathsecond    =   [bundle pathForResource:@"9" ofType:@"mp4"];
+    NSString    *musicPath  =   [bundle pathForResource:@"music" ofType:@"mp3"];
+    AVAsset     *videoAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPath]];
+    AVAsset     *secondvideoAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPathsecond]];
+    AVAsset     *musicAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:musicPath]];
+    
+    AVMutableComposition    *composition    =   [AVMutableComposition composition];
+    
+    AVMutableCompositionTrack   *videoTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    AVMutableCompositionTrack   *audioTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:kCMTimeZero error:nil];
+    
+    //    [videoTrack insertTimeRange:CMTimeRangeMake(videoAsset.duration, secondvideoAsset.duration) ofTrack:[secondvideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:videoAsset.duration error:nil];
+    
+    [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:[musicAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
+    
+    AVMutableVideoCompositionInstruction    *videoInstruction   =   [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    videoInstruction.timeRange  =   CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
+    
+    AVMutableVideoCompositionLayerInstruction   *fromLayerInstruction  =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    
+    AVMutableVideoCompositionLayerInstruction   *backLayerInstruction  =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    
+    AVMutableVideoComposition *    mainCompositionInst  =   [AVMutableVideoComposition videoCompositionWithPropertiesOfAsset:composition];
+    
+    UIImageOrientation videoAssetOrientation_  = UIImageOrientationUp;
+    BOOL isVideoAssetPortrait_  = NO;
+    CGAffineTransform videoTransform = videoTrack.preferredTransform;
+    if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ = UIImageOrientationRight;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+        videoAssetOrientation_ =  UIImageOrientationLeft;
+        isVideoAssetPortrait_ = YES;
+    }
+    if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
+        videoAssetOrientation_ =  UIImageOrientationUp;
+    }
+    if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+        videoAssetOrientation_ = UIImageOrientationDown;
+    }
+    
+    //    [fromLayerInstruction setTransform:videoTrack.preferredTransform atTime:kCMTimeZero];
+    //    [fromLayerInstruction setOpacity:0.0 atTime:videoAsset.duration];
+    
+    CGSize naturalSize;
+    if(isVideoAssetPortrait_){
+        naturalSize = CGSizeMake(videoTrack.naturalSize.height, videoTrack.naturalSize.width);
+    } else {
+        naturalSize = videoTrack.naturalSize;
+    }
+    
+    //    naturalSize =   CGSizeMake(320,240);
+    
+    float renderWidth, renderHeight;
+    renderWidth = naturalSize.width;
+    renderHeight = naturalSize.height;
+    mainCompositionInst.renderSize = CGSizeMake(renderWidth, renderHeight);
+    
+    //溶解过渡效果
+    //    [fromLayerInstruction setOpacityRampFromStartOpacity:1.0 toEndOpacity:0.0 timeRange:CMTimeRangeMake(kCMTimeZero, CMTimeMake(2, 1))];
+    //    [fromLayerInstruction setOpacityRampFromStartOpacity:0.0 toEndOpacity:1.0 timeRange:CMTimeRangeMake(kCMTimeZero, CMTimeMake(3, 1))];
+    //应用擦除过渡效果
+    //    CGFloat videoWidth  =   mainCompositionInst.renderSize.width;
+    //    CGFloat videoHeight =   mainCompositionInst.renderSize.height;
+    //    CGRect  starRect    =   CGRectMake(0.0f, 0.0f, videoWidth, videoHeight);
+    //    CGRect  endRect     =   CGRectMake(0.0f, videoHeight, videoWidth, 0.0f);
+    //    [fromLayerInstruction setCropRectangleRampFromStartCropRectangle:starRect toEndCropRectangle:endRect timeRange:CMTimeRangeMake(CMTimeMake(2, 2), CMTimeMake(5, 1))];
+    //    [fromLayerInstruction setCropRectangleRampFromStartCropRectangle:endRect toEndCropRectangle:starRect timeRange:CMTimeRangeMake(CMTimeMake(7, 7), CMTimeMake(5, 1))];
+    //    //应用推入过渡效果
+    CGAffineTransform   identityTransform   =   CGAffineTransformIdentity;
+    CGFloat videowidth  =   mainCompositionInst.renderSize.width;
+    CGAffineTransform   fromDestTransform   =   CGAffineTransformMakeTranslation(-videowidth, 0.0);
+    CGAffineTransform   toStartTransform    =   CGAffineTransformMakeTranslation(videowidth, 0.0);
+    [fromLayerInstruction setTransformRampFromStartTransform:identityTransform toEndTransform:fromDestTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+    [backLayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:identityTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+    videoInstruction.layerInstructions  =   [NSArray arrayWithObjects:fromLayerInstruction,backLayerInstruction,nil];
+    mainCompositionInst.instructions = [NSArray arrayWithObject:videoInstruction];
+    mainCompositionInst.frameDuration = CMTimeMake(1, 30);
+    
+    
+    // 1 - Set up the text layer
+    //        CATextLayer *subtitle1Text = [[CATextLayer alloc] init];
+    //        [subtitle1Text setFont:@"Helvetica-Bold"];
+    //        [subtitle1Text setFontSize:36];
+    //        [subtitle1Text setFrame:CGRectMake(100, 100, naturalSize.width, 100)];
+    //        [subtitle1Text setString:@"MuFeng..........."];
+    //        [subtitle1Text setAlignmentMode:kCAAlignmentCenter];
+    //        [subtitle1Text setForegroundColor:[[UIColor whiteColor] CGColor]];
+    
+    // 2 - The usual overlay
+    //        CALayer *overlayLayer = [CALayer layer];
+    //        [overlayLayer addSublayer:subtitle1Text];
+    //        overlayLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
+    //        [overlayLayer setMasksToBounds:YES];
+    //
+    //
+    //        CALayer *parentLayer = [CALayer layer];
+    //        CALayer *videoLayer = [CALayer layer];
+    //
+    //        parentLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
+    //        videoLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height);
+    //        [parentLayer addSublayer:videoLayer];
+    //        [parentLayer addSublayer:overlayLayer];
+    //
+    //        mainCompositionInst.animationTool = [AVVideoCompositionCoreAnimationTool
+    //                                             videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+    [self exportVideo:composition withVideoComPosition:mainCompositionInst];
+}
 
 
 
