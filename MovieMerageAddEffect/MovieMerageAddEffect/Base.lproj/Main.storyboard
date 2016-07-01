@@ -73,6 +73,39 @@
                                     <action selector="InsertVideoToTransform" destination="BYZ-38-t0r" eventType="touchUpInside" id="xgi-ZQ-dSi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fo-WZ-PwE">
+                                <rect key="frame" x="20" y="345" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0BO-Nd-11B"/>
+                                    <constraint firstAttribute="width" constant="151" id="QgN-Ss-YET"/>
+                                </constraints>
+                                <state key="normal" title="溶解效果的过渡转场"/>
+                                <connections>
+                                    <action selector="twoVideoTransferEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8T-TB-VZG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-ZD-KkU">
+                                <rect key="frame" x="225" y="345" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QTm-ez-xYS"/>
+                                    <constraint firstAttribute="width" constant="151" id="YFS-Oo-ayk"/>
+                                </constraints>
+                                <state key="normal" title="推入过渡效果转场"/>
+                                <connections>
+                                    <action selector="twoVideoTransferEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kyu-Bh-8iV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th5-gd-Y1R">
+                                <rect key="frame" x="429" y="345" width="151" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SHX-r4-yd2"/>
+                                    <constraint firstAttribute="width" constant="151" id="eci-qi-1Fj"/>
+                                </constraints>
+                                <state key="normal" title="擦除过渡效果转场"/>
+                                <connections>
+                                    <action selector="twoVideoTransferEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVd-mN-J4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -82,9 +115,15 @@
                             <constraint firstItem="Mcg-eF-8We" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Uv-jD-ebW"/>
                             <constraint firstItem="eBP-2r-3pj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D8w-Vf-tV9"/>
                             <constraint firstItem="Xix-bg-Hok" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GGh-px-j05"/>
+                            <constraint firstItem="HOa-Gw-vvl" firstAttribute="top" secondItem="9fo-WZ-PwE" secondAttribute="bottom" constant="129" id="Nmp-p1-JF6"/>
                             <constraint firstItem="bzh-kS-TCB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZZr-Tw-U1O"/>
+                            <constraint firstItem="9fo-WZ-PwE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="buM-Jg-lkR"/>
+                            <constraint firstItem="th5-gd-Y1R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fYV-3R-xPl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bzh-kS-TCB" secondAttribute="bottom" constant="66" id="iAs-Pi-RSD"/>
                             <constraint firstItem="HOa-Gw-vvl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="k6M-eb-4Bt"/>
+                            <constraint firstItem="Ycf-ZD-KkU" firstAttribute="top" secondItem="eBP-2r-3pj" secondAttribute="bottom" constant="30" id="mJm-1n-JNO"/>
+                            <constraint firstItem="Ycf-ZD-KkU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pJq-g4-Jvn"/>
+                            <constraint firstItem="bzh-kS-TCB" firstAttribute="top" secondItem="th5-gd-Y1R" secondAttribute="bottom" constant="129" id="xTN-aK-g3k"/>
                             <constraint firstItem="Mcg-eF-8We" firstAttribute="top" secondItem="eBP-2r-3pj" secondAttribute="bottom" constant="87" id="xs5-nE-91j"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xix-bg-Hok" secondAttribute="bottom" constant="20" id="yNH-Ru-B36"/>
                         </constraints>
