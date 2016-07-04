@@ -12,7 +12,7 @@
 @property(nonatomic,strong)AVPlayer   *player;
 @property(nonatomic,strong)AVPlayerItem     *playerItem;
 
-@end
+@end 
 @implementation YiPlayer
 
 - (instancetype)initWithFrame:(CGRect)frame{

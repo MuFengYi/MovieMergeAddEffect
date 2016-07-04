@@ -121,7 +121,7 @@
                 [_wmPlayer setURLString:outPutPath];
                     [_wmPlayer play];
                 });
-//                [self writeVideoToPhotoLibrary:[NSURL fileURLWithPath:outPutPath]];
+//                 [self writeVideoToPhotoLibrary:[NSURL fileURLWithPath:outPutPath]];
                 break;
                 
         }
@@ -488,17 +488,17 @@
     mainVideoComposition.renderSize = CGSizeMake(renderWidth, renderHeight);
     
     if (clickButton.tag==1) {
-            [fromlayerInstruction setOpacityRampFromStartOpacity:1.0 toEndOpacity:0.5 timeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAsset.duration)];
-           [tolayerInstruction setOpacityRampFromStartOpacity:0.5 toEndOpacity:1.0 timeRange:CMTimeRangeMake(firstVideoAsset.duration, secondVideoAsset.duration)];
+            [fromlayerInstruction setOpacityRampFromStartOpacity:1.0 toEndOpacity:0.2 timeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAsset.duration)];
+           [tolayerInstruction setOpacityRampFromStartOpacity:0.2
+                                                 toEndOpacity:1.0 timeRange:CMTimeRangeMake(firstVideoAsset.duration, secondVideoAsset.duration)];
     }else if (clickButton.tag==2){
-        
             CGFloat videoWidth  =   mainVideoComposition.renderSize.width;
             CGFloat videoHeight =   mainVideoComposition.renderSize.height;
             CGRect  starRect    =   CGRectMake(0.0f, 0.0f, videoWidth, videoHeight);
             CGRect  endRect     =   CGRectMake(0.0f, videoHeight, videoWidth, 0.0f);
+        CMTimeRange starttimeRange  =   CMTimeRangeFromTimeToTime(CMTimeMake(9, 1), CMTimeMake(10, 1));
             [fromlayerInstruction setCropRectangleRampFromStartCropRectangle:starRect toEndCropRectangle:endRect timeRange:CMTimeRangeMake(CMTimeMake(2, 2), CMTimeMake(5, 1))];
             [tolayerInstruction setCropRectangleRampFromStartCropRectangle:endRect toEndCropRectangle:starRect timeRange:CMTimeRangeMake(CMTimeMake(7, 7), CMTimeMake(5, 1))];
-
     }else{
         CGAffineTransform   identityTransform   =   CGAffineTransformIdentity;
         CGFloat videowidth  =   mainVideoComposition.renderSize.width;
