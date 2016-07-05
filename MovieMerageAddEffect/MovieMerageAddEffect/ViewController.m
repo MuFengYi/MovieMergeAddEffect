@@ -12,6 +12,7 @@
 #import "WMPlayer.h"
 @interface ViewController ()
 @property(nonatomic,strong)WMPlayer *wmPlayer;
+@property (weak, nonatomic) IBOutlet UISlider *tirmSlider;
 @end
 
 @implementation ViewController
@@ -24,7 +25,44 @@
     NSString    *videoPath  =   [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp4"];
 //    NSString *outPutPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"merage.mp4"];
     [_wmPlayer setURLString:videoPath];
+    
+    [_tirmSlider addTarget:self action:@selector(slideValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
+- (void)slideValueChanged:(UISlider*)slider{
+     NSString    *videoPath  =   [[NSBundle mainBundle]pathForResource:@"1" ofType:@"mp4"];
+    AVAsset     *videoAsset   = [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPath]];
+    AVMutableComposition    *composition    =   [AVMutableComposition composition];
+    
+    CMTime  videoDurationxx   =   videoAsset.duration;
+    NSLog(@"value==%f",slider.value);
+    
+    
+    NSRange videoRange       =   NSMakeRange(slider.value*videoDurationxx.timescale, videoDurationxx.timescale);
+    
+    //开始位置startTime
+    CMTime startTime = CMTimeMakeWithSeconds(videoRange.location, videoAsset.duration.timescale);
+    //截取长度videoDuration
+    CMTime videoDuration = CMTimeMakeWithSeconds(videoRange.length, videoAsset.duration.timescale);
+    
+    CMTimeRange videoTimeRange = CMTimeRangeMake(startTime, videoDuration);
+    
+    //视频采集compositionVideoTrack
+    AVMutableCompositionTrack *compositionVideoTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+#warning 避免数组越界 tracksWithMediaType 找不到对应的文件时候返回空数组
+    //TimeRange截取的范围长度
+    //ofTrack来源
+    //atTime插放在视频的时间位置
+    [compositionVideoTrack insertTimeRange:videoTimeRange ofTrack:([videoAsset tracksWithMediaType:AVMediaTypeVideo].count>0) ? [videoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject : nil atTime:kCMTimeZero error:nil];
+    
+    
+    //视频声音采集(也可不执行这段代码不采集视频音轨，合并后的视频文件将没有视频原来的声音)
+    AVMutableCompositionTrack *compositionVoiceTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    [compositionVoiceTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:([videoAsset tracksWithMediaType:AVMediaTypeAudio].count>0)?[videoAsset tracksWithMediaType:AVMediaTypeAudio].firstObject:nil atTime:kCMTimeZero error:nil];
+    
+    [self exportVideo:composition withVideoComPosition:nil];
+}
+
 + (NSArray*)videoAsset{
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *firstVideo = [mainBundle pathForResource:@"xx" ofType:@"mp4"];
@@ -72,13 +110,9 @@
     CMTimeRange totalTimeRange  =   CMTimeRangeMake(kCMTimeZero,CMTimeAdd(CMTimeAdd(secondTimeRange.duration, firstTimeRange.duration), endedTimeRange.duration));
     [audioTrack insertTimeRange:firstTimeRange ofTrack:[firstAsset tracksWithMediaType:AVMediaTypeAudio][0] atTime:kCMTimeZero error:nil];
      [audioTrack insertTimeRange:secondTimeRange ofTrack:[firstAsset tracksWithMediaType:AVMediaTypeAudio][0] atTime:firstAsset.duration error:nil];
-    
     AVVideoComposition  *videoComposition   =   [AVVideoComposition videoCompositionWithPropertiesOfAsset:composition];
-    
     NSArray *transitionInstructions =    videoComposition.instructions;
     AVVideoCompositionLayerInstruction  *layerInstruction   =   [transitionInstructions firstObject];
-    
-    
     [self exportVideo:composition withVideoComPosition:nil];
 }
 
@@ -313,9 +347,6 @@
     [self exportVideo:composition withVideoComPosition:videoComposition];
 }
 
-
-
-
 - (IBAction)InsertVideoToTransform{
     
     NSBundle    *bundle =   [NSBundle mainBundle];
@@ -436,18 +467,24 @@
     AVAsset *firstVideoAsset    =   [AVAsset assetWithURL:[NSURL fileURLWithPath:firstVideoPath]];
     AVAsset *secondVideoAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:secondVideoPath]];
     AVAsset *audioAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:[bundle pathForResource:@"music" ofType:@"mp3"]]];
+    NSString    *endPath    =   [bundle pathForResource:@"qiege_pianweien" ofType:@"mp4"];
+    AVAsset     *endAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:endPath]];
     
     AVMutableComposition    *composition    =   [AVMutableComposition composition];
     AVMutableCompositionTrack   *videoTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
     AVMutableCompositionTrack   *audioTrack =   [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
     
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, firstVideoAsset.duration) ofTrack:[firstVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:kCMTimeZero error:nil];
+    
     [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero,secondVideoAsset.duration) ofTrack:[secondVideoAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:firstVideoAsset.duration error:nil];
+    
+    [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, endAsset.duration) ofTrack:[endAsset tracksWithMediaType:AVMediaTypeVideo].firstObject atTime:CMTimeAdd(firstVideoAsset.duration, secondVideoAsset.duration) error:nil];
+    
     [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration, secondVideoAsset.duration)) ofTrack:[audioAsset tracksWithMediaType:AVMediaTypeAudio].firstObject atTime:kCMTimeZero error:nil];
     
     //视频编辑指令
     AVMutableVideoCompositionInstruction    *videoCompositionInstruction    =   [AVMutableVideoCompositionInstruction videoCompositionInstruction];
-    videoCompositionInstruction.timeRange   =   CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration, secondVideoAsset.duration));
+    videoCompositionInstruction.timeRange   =   CMTimeRangeMake(kCMTimeZero, CMTimeAdd(firstVideoAsset.duration,CMTimeAdd(secondVideoAsset.duration, endAsset.duration)));
     AVMutableVideoCompositionLayerInstruction   *fromlayerInstruction   =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
     
     AVMutableVideoCompositionLayerInstruction   *tolayerInstruction   =   [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
@@ -505,7 +542,14 @@
         CGAffineTransform   fromDestTransform   =   CGAffineTransformMakeTranslation(-videowidth, 0.0);
         CGAffineTransform   toStartTransform    =   CGAffineTransformMakeTranslation(videowidth, 0.0);
         [fromlayerInstruction setTransformRampFromStartTransform:identityTransform toEndTransform:fromDestTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+        
+        [fromlayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:fromDestTransform timeRange:CMTimeRangeMake(kCMTimeZero, CMTimeMake(10, 1))];
+        [tolayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:identityTransform timeRange:CMTimeRangeMake(kCMTimeZero, CMTimeMake(8, 4))];
+
         [tolayerInstruction setTransformRampFromStartTransform:toStartTransform toEndTransform:identityTransform timeRange:CMTimeRangeMake(kCMTimeZero,CMTimeMake(5, 1))];
+        
+        [tolayerInstruction setOpacityRampFromStartOpacity:0.2
+                                              toEndOpacity:1.0 timeRange:CMTimeRangeMake(firstVideoAsset.duration, secondVideoAsset.duration)];
     }
     videoCompositionInstruction.layerInstructions  =   [NSArray arrayWithObjects:fromlayerInstruction,tolayerInstruction,nil];
     mainVideoComposition.instructions = [NSArray arrayWithObject:videoCompositionInstruction];
@@ -519,9 +563,13 @@
     NSString    *videoPath  =   [bundle pathForResource:@"6" ofType:@"mp4"];
     NSString    *videoPathsecond    =   [bundle pathForResource:@"9" ofType:@"mp4"];
     NSString    *musicPath  =   [bundle pathForResource:@"music" ofType:@"mp3"];
+    
+    
     AVAsset     *videoAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPath]];
     AVAsset     *secondvideoAsset   =   [AVAsset assetWithURL:[NSURL fileURLWithPath:videoPathsecond]];
     AVAsset     *musicAsset =   [AVAsset assetWithURL:[NSURL fileURLWithPath:musicPath]];
+    
+    
     
     AVMutableComposition    *composition    =   [AVMutableComposition composition];
     

@@ -106,16 +106,25 @@
                                     <action selector="twoVideoTransferEffect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVd-mN-J4y"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N2p-cL-6zd">
+                                <rect key="frame" x="18" y="440" width="564" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RMP-Ta-7sr"/>
+                                </constraints>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="N2p-cL-6zd" firstAttribute="top" secondItem="Mcg-eF-8We" secondAttribute="bottom" constant="8" id="64T-VG-C6g"/>
                             <constraint firstItem="eBP-2r-3pj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="69C-be-HJy"/>
                             <constraint firstItem="Xix-bg-Hok" firstAttribute="top" secondItem="HOa-Gw-vvl" secondAttribute="bottom" constant="16" id="6nR-q9-Pev"/>
                             <constraint firstItem="Mcg-eF-8We" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="117" id="8ME-nm-C0a"/>
                             <constraint firstItem="Mcg-eF-8We" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Uv-jD-ebW"/>
                             <constraint firstItem="eBP-2r-3pj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D8w-Vf-tV9"/>
+                            <constraint firstItem="N2p-cL-6zd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="EKT-eY-oFG"/>
                             <constraint firstItem="Xix-bg-Hok" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GGh-px-j05"/>
                             <constraint firstItem="HOa-Gw-vvl" firstAttribute="top" secondItem="9fo-WZ-PwE" secondAttribute="bottom" constant="129" id="Nmp-p1-JF6"/>
+                            <constraint firstItem="N2p-cL-6zd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="RGe-UU-KNZ"/>
                             <constraint firstItem="bzh-kS-TCB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZZr-Tw-U1O"/>
                             <constraint firstItem="9fo-WZ-PwE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="buM-Jg-lkR"/>
                             <constraint firstItem="th5-gd-Y1R" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fYV-3R-xPl"/>
@@ -128,6 +137,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xix-bg-Hok" secondAttribute="bottom" constant="20" id="yNH-Ru-B36"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tirmSlider" destination="N2p-cL-6zd" id="qVD-5v-BvP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
